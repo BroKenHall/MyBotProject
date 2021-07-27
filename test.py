@@ -12,6 +12,10 @@ client = commands.Bot(command_prefix = '.', help_command=None)
 async def on_ready():
     print("Confessioner is now Online")
 
+@client.command()
+async def test():
+    print("Working")
+
 channel_pairs = {}
 @client.command()
 async def channel(ctx):
