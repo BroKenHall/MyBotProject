@@ -26,6 +26,8 @@ animals = [
     'https://media.discordapp.net/attachments/869440719100706826/869449049806372994/60489b65260000db03d84d79.png'
 ]
 
+
+
 @client.event
 async def on_ready():
     print("Chat reviver is now Online")
@@ -61,6 +63,15 @@ async def cute(ctx):
     await ctx.send(random.choice(animals))
 
 @client.command()
+async def invite(ctx):
+    embed = discord.Embed(
+        colour=discord.Color.random()
+    )
+
+    embed.add_field(name="Invite", value="[https://discord.com/api/oauth2/authorize?client_id=867723325791010817&permissions=8&scope=bot](Join here)")
+    embed.set_footer(text="Wanna Keep the bot up? Invite your friends!")
+
+@client.command()
 async def help(ctx):
     embed = discord.Embed(
         colour=discord.Color.random()
@@ -69,6 +80,5 @@ async def help(ctx):
     embed.add_field(name="Help Command", value="**.channel [where bot sends] [where user sends]**\n```^ This is the command to setup confessions```\n\n**.cute**\n```sends cute animal picture```")
     
     await ctx.send(embed=embed)
-
 
 client.run(config.token)
