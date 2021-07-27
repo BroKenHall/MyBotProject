@@ -68,7 +68,7 @@ async def invite(ctx):
         colour=discord.Color.random()
     )
 
-    embed.add_field(name="Invite", value="[Join here]](https://discord.com/api/oauth2/authorize?client_id=867723325791010817&permissions=8&scope=bot)")
+    embed.add_field(name="Invite", value="[Join here](https://discord.com/api/oauth2/authorize?client_id=867723325791010817&permissions=8&scope=bot)")
     embed.set_footer(text="Wanna Keep the bot up? Invite your friends!")
 
     await ctx.send(embed=embed)
