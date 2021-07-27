@@ -71,6 +71,8 @@ async def invite(ctx):
     embed.add_field(name="Invite", value="[https://discord.com/api/oauth2/authorize?client_id=867723325791010817&permissions=8&scope=bot](Join here)")
     embed.set_footer(text="Wanna Keep the bot up? Invite your friends!")
 
+    await ctx.send(embed=embed)
+
 @client.command()
 async def help(ctx):
     embed = discord.Embed(
