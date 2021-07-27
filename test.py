@@ -19,29 +19,9 @@ async def test():
 
 channel_pairs = {}
 @client.command()
-async def channel(ctx):
+async def channel(ctx, priest_channel: discord.Channel, penitent_channel: discord.Channel):
     global channel_pairs
-    
-    def check(m):
-        return m.author == ctx.author and m.channel == ctx.channel
-
-    await ctx.send("Where do you want confessions sent?")
-    msg = await client.wait_for('message', check=check)
-    try:
-        channel_1 = await commands.TextChannelConverter().convert(ctx, msg.content) # Converting message text to text channel
-    except:
-        # If it's an invalid channel, or conversion fails
-        return await ctx.send("That's not a valid channel!")
-
-    await ctx.send("Where do you want confessions recieved?")
-    msg = await client.wait_for('message', check=check)
-    try:
-        channel_2 = await commands.TextChannelConverter().convert(ctx, msg.content) # Converting message text to text channel
-    except:
-        # If it's an invalid channel, or conversion fails
-        return await ctx.send("That's not a valid channel!")
-
-    channel_pairs[ctx.guild.id] = [channel_1.id, channel_2.id] # first item is sending channel, second item is receiving channel
+    channel_pairs[ctx.guild.id] = [priest_channel.id, penitent_channel.id]
 
 @client.listen()
 async def on_message(message):
