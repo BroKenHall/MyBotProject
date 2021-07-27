@@ -5,6 +5,7 @@ import datetime
 import time
 import os
 import asyncio
+import config
 
 client = commands.Bot(command_prefix = '.', help_command=None)
 
@@ -62,4 +63,4 @@ async def on_message(message):
         await message.delete()
 
 
-client.run('ODY3NzIzMzI1NzkxMDEwODE3.YPlQUg.yQUqICvjwM8UBvoM4Lcb_CeCsYo')
+client.run(config.token)
