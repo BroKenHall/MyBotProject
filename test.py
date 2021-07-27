@@ -66,7 +66,7 @@ async def help(ctx):
         colour=discord.Color.random()
         )
     
-    embed.add_field(name="Help Command", value=".channel [where bot sends] [where user sends]\n^ This is the command to setup confessions\n\n.cute\nsends cute animal picture")
+    embed.add_field(name="Help Command", value="**.channel [where bot sends] [where user sends]**\n```^ This is the command to setup confessions```\n\n**.cute**\n```sends cute animal picture```")
     
     await ctx.send(embed=embed)
 
