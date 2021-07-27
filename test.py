@@ -19,7 +19,7 @@ async def test():
 
 channel_pairs = {}
 @client.command()
-async def channel(ctx, priest_channel: discord.Channel, penitent_channel: discord.Channel):
+async def channel(ctx, priest_channel: discord.TextChannel, penitent_channel: discord.TextChannel):
     global channel_pairs
     channel_pairs[ctx.guild.id] = [priest_channel.id, penitent_channel.id]
 
