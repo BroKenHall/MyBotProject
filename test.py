@@ -11,7 +11,7 @@ client = commands.Bot(command_prefix = '.', help_command=None)
 
 @client.event
 async def on_ready():
-    print("Confessioner is now Online")
+    print("Chat reviver is now Online")
 
 @client.command()
 async def test():
