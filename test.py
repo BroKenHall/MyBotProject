@@ -83,4 +83,6 @@ async def help(ctx):
     
     await ctx.send(embed=embed)
 
+    
+
 client.run(config.token)
